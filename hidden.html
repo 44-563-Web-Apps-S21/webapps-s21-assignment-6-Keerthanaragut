@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Assignment 6</title>
+     </head>
+<body>
+<h1>Hidden things by Keerthana Ragut</h1>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="secret_word">Enter the secret word </label>
+    <input type ="password" id="secret_word" name="secret_word" min=10 max=50 step=2 value=secret> <br>
+<br>
+    <label for="guess">Enter a guess</label>
+    <input type ="text" id="guess" name="guess" autofocus> <br>
+<br>
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+let correct = 0;
+let wrong = 0;
+
+function processGuess (){
+    //console.log("Getting form values")
+    secret = document.getElementById("secret_word").value
+    guess = document.getElementById("guess").value
+    //confirmed = confirm("Are these the values? "+secret+" and "+guess)
+    out = document.getElementById("result")
+    if(secret == guess){
+        correct++
+        alert("Congratulations")
+      
+    } else {
+        wrong++
+        alert("sorry")
+       
+
+    }
+    out.innerHTML = "correct score :"+correct+" wrong score : "+wrong
+}
+</script>
+
+</body>
+</html> 
